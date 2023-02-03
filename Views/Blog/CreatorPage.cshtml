@@ -1,0 +1,32 @@
+﻿@using Blog.Models
+@model BlogEntry
+
+@{
+    ViewData["Title"] = "Change Blog Creator";
+}
+
+<link href="~/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript' src='~/js/froala_editor.pkgd.min.js'></script>  	
+
+<h5 class="mb-4">Create Post</h5>
+
+<div>
+  
+    <form action="CreatorPage" method="POST">
+        <input hidden asp-for=Id />
+        <textarea asp-for=Content id="myEditor"></textarea>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+    
+   
+
+
+    <script>
+        var editor = new FroalaEditor('#myEditor');
+        
+        //How to change the Toolbar - gå to Froala examples and buttons and paste the version you like:
+        //var editor = new FroalaEditor('#myEditor', {
+        //    toolbarButtons: [['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript'], ['fontFamily', 'fontSize', 'textColor', 'backgroundColor'], ['inlineClass', 'inlineStyle', 'clearFormatting']]
+        //});
+    </script>
+</div>
