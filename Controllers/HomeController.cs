@@ -17,7 +17,7 @@ namespace TimewisePortalShadow.Controllers
         {
             return View();
         }
-
+        [BasicAuthorize]
         public IActionResult Privacy()
         {
             return View();
